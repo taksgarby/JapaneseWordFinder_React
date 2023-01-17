@@ -1,23 +1,24 @@
 import React from 'react';
 
 
-const CategorySelect = ({categories, handleSelectChange}) => {
+const CategorySelect = ({categories, onCategorySelected}) => {
 
-    const handleChange = (event) => {
-      const index = event.target.value;
-      handleSelectChange(categories[index]);
-    }
+  const handleChange = function (event) {
+    const chosenCategory = categories[event.target.value];
+    onCategorySelected(chosenCategory);
+  }
 
-    const categoryOptions = categories.map((category, index) => {
-      return <option key={index} value={index}>{category.categoryName}</option>
-    });
+  const categoryOptions = categories.map((category, id) => {
+    return <option value={id} key={id}>{category.categoryName}</option>
+  })
 
-    return (
-        <select onChange={handleChange}>
-            {categoryOptions}
-        </select>
-    )
-  
+  return (
+    <select defaultValue="" onChange={handleChange}>
+      <option value="" selected>Choose a Category</option>
+      {categoryOptions}
+    </select>
+  )
+
 }
 
 export default CategorySelect;

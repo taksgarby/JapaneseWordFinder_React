@@ -1,0 +1,19 @@
+
+section #kotobas {
+    margin-top: 40px;
+  }
+  #kotoba-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .kotoba-info {
+    box-sizing: border-box;
+    width: 32%;
+    background: lightblue;
+    margin-bottom: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }

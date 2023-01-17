@@ -1,53 +1,63 @@
 import React, { useState, useEffect } from "react";
 import CategorySelect from "../components/CategorySelect";
 import CategoryDetails from "../components/CategoryDetails";
+import KotobaList from "../components/KotobaList";
 // import { getCategory, categoryById } from "../services/CategoryService";
 // import { getKotoba, kotobaById } from "../services/KotobasService";
 
 const  KotobaContainer= () => {
 
-    const[categories, setCategory] = useState([]);
+    const[categories, setCategories] = useState([]);
     const[selectedCategory, setSelectedCategory] = useState(null);
-    const[kotobas, setKotoba]= useState([]);
 
+    useEffect(() => {
+        getCategories();
+    }, [])
+
+    const getCategories = function() {
+        fetch('http://localhost:8080/categories')
+        .then(res => res.json())
+        .then(categories => setCategories(categories))
+    }
 
     // useEffect(() => {
-    //     getCategory()
-    //         .then((info) =>
-    //             setCategory(info)
-    //         )
-    //     getKotoba()
-    //         .then((info) =>
-    //             setKotoba(info))
+    //     fetch("http://localhost:8080/categories")
+    //         .then((res) => res.json())
+    //         .then((categories) => setCategory(categories));
+    // },[]);
 
-    // }, [])
+    // const getCategoryById = (id) => {
+    //     categories.find((category) => category.id === id);
+    // }
+
+    // useEffect( () => {
+    //     fetch( 'http://localhost:8080/categories')
+    //         .then( res => res.json() )
+    //         .then( data => setCategory(data) )
+    // }, [] )
 
 
+    // const[kotobas, setKotoba]= useState([]);
 
-    useEffect( () => {
-        fetch( 'http://localhost:8080/categories' )
-            .then( res => res.json() )
-            .then( data => setCategory(data) )
-    }, [] )
+    // useEffect(() => {
+    //     fetch("http://localhost:8080/kotoba")
+    //         .then((res) => res.json())
+    //         .then((kotobaData) => setKotoba(kotobaData));
+    // },[]);
 
-    const handleSelectChange = ( category ) => {
-        const kotobaPromises = category.kotobas.map( ( kotoba ) => {
-            return fetch( kotoba ).then( res => res.json() );
-        } )
-        Promise.all( kotobaPromises )
-            .then( ( data ) => {
-                setKotoba(data);
-                setSelectedCategory(category);
-            } )
-        }
+
+    const onCategorySelected = function (category){
+        setSelectedCategory(category);
+    }
 
 
 
     return ( 
         <div>
             <h1>Japanese Word Finder</h1>
-            < CategorySelect categories = {categories} handleSelectChange={handleSelectChange}/>
-            { selectedCategory ? <CategoryDetails category={ selectedCategory} kotobas ={kotobas}/>  : null}
+            < CategorySelect categories = {categories} onCategorySelected={onCategorySelected}/>
+           {selectedCategory ? <CategoryDetails selectedCategory={selectedCategory}/> : null}
+          
         </div>
      );
 }

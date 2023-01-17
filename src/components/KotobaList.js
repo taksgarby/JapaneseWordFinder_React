@@ -1,6 +1,40 @@
-const KotobaList = () => {
+import React from 'react';
+import './KotobaList.css';
+import Kotoba from './Kotoba';
+import styled from "styled-components";
+
+const KotobaList = ({selectedCategory}) => {
+
+  const KotobaCard = styled.div`
+  width: 20rem;
+  position: relative;
+`;
+
+  const KotobaResult = selectedCategory.kotobas.map((kotoba, id) => {
+    if (selectedCategory.kotobas) {
+      return (
+  
+    <>
+    <KotobaCard key={id}>
+        <h3>{kotoba.name}</h3>
+    
+        <h4>{kotoba.pronunciation}</h4>
+
+        </KotobaCard>
+    </>
+      )
+    }
+  })
+  
+
     return (
-        <h1>Kotoba List</h1>
+        <>
+          <section id="kotobas">
+        <div id="kotoba-wrapper">
+        {KotobaResult}
+        </div>
+           </section>
+        </>
       );
 }
  

@@ -1,23 +1,17 @@
 import react from 'react';
 import KotobaList from './KotobaList'
-// import './CategoryDetail.css'
+import KotobaContainer from '../containers/KotobaContainer';
 
-const CategoryDetails = ({category, kotobas}) => {
+const CategoryDetails = ({selectedCategory}) => {
+
+  
+
 
   return (
-    <div  id="categoryDetail">
-
-          <h2>{category.categoryName}</h2>
-          <p><span>Category</span>: {category.categoryName}</p>
-        
-
-
-
-    <div id="kotoba-list-wrapper">
-      <KotobaList kotobas={kotobas}/>
-    </div>
-
-  </div>
+   <div>
+    <h3>{selectedCategory.categoryName}</h3>
+    <KotobaList selectedCategory={selectedCategory}/>
+   </div>
   )
 }
 
