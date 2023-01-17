@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import CategorySelect from "../components/CategorySelect";
 import CategoryDetails from "../components/CategoryDetails";
 import KotobaList from "../components/KotobaList";
+import Header from "../components/Header";
+import { createGlobalStyle } from "styled-components";
 // import { getCategory, categoryById } from "../services/CategoryService";
 // import { getKotoba, kotobaById } from "../services/KotobasService";
 
@@ -50,11 +52,18 @@ const  KotobaContainer= () => {
         setSelectedCategory(category);
     }
 
+    const GlobalStyle = createGlobalStyle`
+        body{
+            font-family: 'Nunito', sans-serif;
+        }
+
+    `
 
 
     return ( 
         <div>
-            <h1>Japanese Word Finder</h1>
+            <GlobalStyle />
+            <Header />
             < CategorySelect categories = {categories} onCategorySelected={onCategorySelected}/>
            {selectedCategory ? <CategoryDetails selectedCategory={selectedCategory}/> : null}
           
@@ -62,4 +71,4 @@ const  KotobaContainer= () => {
      );
 }
 
-export default KotobaContainer
+export default KotobaContainer;

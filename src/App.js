@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 import KotobaContainer from './containers/KotobaContainer';
 function App() {

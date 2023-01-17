@@ -9,7 +9,7 @@ const CategoryDetails = ({selectedCategory}) => {
 
   return (
    <div>
-    <h3>{selectedCategory.categoryName}</h3>
+    <h5>Word list for: {selectedCategory.categoryName}</h5>
     <KotobaList selectedCategory={selectedCategory}/>
    </div>
   )

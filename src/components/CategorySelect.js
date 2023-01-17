@@ -13,10 +13,13 @@ const CategorySelect = ({categories, onCategorySelected}) => {
   })
 
   return (
+    <>
+    <h5>Choose a category to start:</h5>
     <select defaultValue="" onChange={handleChange}>
       <option value="" selected>Choose a Category</option>
       {categoryOptions}
     </select>
+    </>
   )
 
 }
