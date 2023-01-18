@@ -4,6 +4,8 @@ import CategoryDetails from "../components/CategoryDetails";
 import KotobaList from "../components/KotobaList";
 import Header from "../components/Header";
 import { createGlobalStyle } from "styled-components";
+
+import NavBar from "../components/NavBar";
 // import { getCategory, categoryById } from "../services/CategoryService";
 // import { getKotoba, kotobaById } from "../services/KotobasService";
 
@@ -63,7 +65,7 @@ const  KotobaContainer= () => {
     return ( 
         <div>
             <GlobalStyle />
-            <Header />
+            <Header /><NavBar />
             < CategorySelect categories = {categories} onCategorySelected={onCategorySelected}/>
            {selectedCategory ? <CategoryDetails selectedCategory={selectedCategory}/> : null}
           

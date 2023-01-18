@@ -9,17 +9,17 @@ const Header = () => {
         color: white;
         display: flex;
         flex-direction: row;
-        margin-bottom: 1em;
+        margin-bottom: 0px;
 
         justify-content: center;
         `
 
     return ( 
-        <div>
+   
             <HeaderStyle>
                 <h2>Japanese Word Finder</h2>
             </HeaderStyle>
-        </div>
+
      );
 }
  

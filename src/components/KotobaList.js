@@ -46,8 +46,8 @@ const KotobaList = ({selectedCategory}) => {
         <KeywordWrapper>Kanji writing: </KeywordWrapper>
         <AnswerWrapper>{kotoba.kanji}</AnswerWrapper>
         </KotobaCard>
-
     </>
+    
       )
     }
   })
