@@ -13,7 +13,7 @@ const KotobaList = ({selectedCategory}) => {
   `
   const KotobaCard = styled.div`
     width: 10rem;
-    background-color: lightpink;
+    background-color: #F3CFC6;
     length: 10rem;
     margin: 1rem;
     position: relative;
