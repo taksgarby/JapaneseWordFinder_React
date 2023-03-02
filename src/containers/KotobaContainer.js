@@ -65,7 +65,8 @@ const  KotobaContainer= () => {
     return ( 
         <div>
             <GlobalStyle />
-            <Header /><NavBar />
+            <Header />
+            <NavBar />
             < CategorySelect categories = {categories} onCategorySelected={onCategorySelected}/>
            {selectedCategory ? <CategoryDetails selectedCategory={selectedCategory}/> : null}
           

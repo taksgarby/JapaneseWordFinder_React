@@ -1,0 +1,30 @@
+.header {
+
+    padding-top: 0.5rem;
+}
+
+
+h3 {
+    margin-top: 4rem;
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+    color: #355E3B;
+}
+
+
+/* The container must be positioned relative: */
+.form-select {
+    position: relative;
+    font-family: Arial;
+    width: auto;
+    margin-bottom: 2rem;
+
+  }
+
+.form-option {
+    color: 	#202020;
+    border:1px solid yellowgreen;
+    padding: 0.5rem;
+    border-radius: 3%;
+
+  }

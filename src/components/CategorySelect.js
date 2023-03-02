@@ -1,5 +1,5 @@
 import React from 'react';
-
+import "./static/style.css"
 
 const CategorySelect = ({categories, onCategorySelected}) => {
 
@@ -14,11 +14,13 @@ const CategorySelect = ({categories, onCategorySelected}) => {
 
   return (
     <>
-    <h5>Choose a category to start:</h5>
-    <select defaultValue="" onChange={handleChange}>
+    <h3>Choose a category to start:</h3>
+    <div class="form-select">
+    <select  class="form-option" defaultValue="" onChange={handleChange}>
       <option value="" selected>Choose a Category</option>
       {categoryOptions}
     </select>
+    </div>
     </>
   )
 

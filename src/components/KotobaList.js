@@ -1,5 +1,5 @@
 import React from 'react';
-import Kotoba from './Kotoba';
+
 import styled from "styled-components";
 
 const KotobaList = ({selectedCategory}) => {
@@ -22,14 +22,16 @@ const KotobaList = ({selectedCategory}) => {
     `;
 
   const KeywordWrapper = styled.div`
-    font-size: 0.8rem;
+    font-size: 1rem;
     color: #355E3B;
 
     `
 
   const AnswerWrapper = styled.div`
-    color: 	#383838;
+    color: 		#101010;
     margin-bottom: 0.5rem;
+    font-size: 1.1rem
+    text-decoration: strong;
     `
 
   const KotobaResult = selectedCategory.kotobas.map((kotoba, id) => {

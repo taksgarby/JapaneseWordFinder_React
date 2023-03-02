@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-
+import "./static/NavBar.css";
 
 
 const Header = () => {
@@ -17,7 +17,7 @@ const Header = () => {
     return ( 
    
             <HeaderStyle>
-                <h2>Japanese Word Finder</h2>
+                <h2 class="header">Japanese Word Finder</h2>
             </HeaderStyle>
 
      );
