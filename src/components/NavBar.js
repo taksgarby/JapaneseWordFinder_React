@@ -12,10 +12,10 @@ const NavBar = () => {
             About this app
           </li>
           <li>
-            What is Kana?
+            <a href="/kana">What is Kana?</a>
           </li>
           <li>
-            What is Kanji?
+            <a href="/kanji">What is Kanji?</a>
           </li>
         </ul>
         

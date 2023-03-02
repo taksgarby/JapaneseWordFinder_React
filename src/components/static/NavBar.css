@@ -13,20 +13,21 @@ ul {
   li {
     color: #355E3B;
     float: right;
-    padding: 0.2rem;
+    padding: 0;
     font-family: 'Akshar';
     font-size: 1.4rem;
   }
   
   li a {
     display: block;
-    color: white;
+    color:#355E3B;
     text-align: center;
-    padding: 14px 16px;
+    padding: 8px 8px;
     text-decoration: none;
   }
   
   /* Change the link color to #111 (black) on hover */
   li a:hover {
-    background-color: yellow;
+    color: white;
+    text-decoration: none;
   }
